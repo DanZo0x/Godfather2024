@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speedMultiplier = 1.0f;
     [SerializeField] private float progressiveSpeedMultiplier = 1.0f;
     [SerializeField] private float slowDownFactor = 1.0f;
+
+    private Vector2 _movementVector;
+    [Range(0.0f, 1.0f)]
+    [SerializeField] private float robotVelocity = 1.0f;
     
     void Start()
     {
@@ -27,22 +31,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        Move();
     }
     
-    public void OnMovementX(InputAction.CallbackContext context)
+    public void OnMovement(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            
+            _movementVector = context.ReadValue<Vector2>();
         }
-    }
-    
-    public void OnMovementY(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        else if (context.canceled)
         {
-            
+            _movementVector = new Vector2(0, 0);
         }
     }
     
@@ -68,5 +68,11 @@ public class PlayerMovement : MonoBehaviour
         {
             
         }
+    }
+
+    public void Move()
+    {
+        Vector2 newPosVector = new Vector2(transform.position.x + _movementVector.x * robotVelocity, transform.position.y);
+        rb.MovePosition(newPosVector);
     }
 }
