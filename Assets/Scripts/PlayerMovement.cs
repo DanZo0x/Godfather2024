@@ -29,4 +29,44 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
+    
+    public void OnMovementX(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+        }
+    }
+    
+    public void OnMovementY(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+        }
+    }
+    
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+        }
+    }
+    
+    public void OnPunch(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+        }
+    }
+    
+    public void OnSwitch(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            
+        }
+    }
 }

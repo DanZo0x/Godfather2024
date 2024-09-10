@@ -226,11 +226,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "Player1",
-            "bindingGroup": "Player1",
-            "devices": []
-        }
-    ]
+    "controlSchemes": []
 }
