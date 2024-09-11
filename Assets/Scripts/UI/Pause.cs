@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
 
-    public GameObject _settingsMenu;
-    public GameObject _settingsOnButton;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _pauseOnButton;
 
     //[SerializeField] DisplayObjective _displayObjective;
 
@@ -19,31 +19,31 @@ public class Pause : MonoBehaviour
     void Start()
     {
         PauseOff();
-        _settingsMenu.SetActive(false);
-        _settingsOnButton.SetActive(true);
+        _pauseMenu.SetActive(false);
+        _pauseOnButton.SetActive(true);
 
 
     }
 
     private void Reset()
     {
-        if (_settingsOnButton == null)
+        if (_pauseOnButton == null)
         {
-            _settingsOnButton = GameObject.Find("SettingsOnBtn");
+            _pauseOnButton = GameObject.Find("SettingsOnBtn");
         }
 
-        if (_settingsMenu == null)
+        if (_pauseMenu == null)
         {
-            _settingsMenu = GameObject.Find("SettingsMenu");
+            _pauseMenu = GameObject.Find("SettingsMenu");
         }
     }
 
     public void PauseOn()
     {
-        if (!_settingsMenu.activeSelf)
+        if (!_pauseMenu.activeSelf)
         {
-            _settingsOnButton.SetActive(false);
-            _settingsMenu.SetActive(true);
+            _pauseOnButton.SetActive(false);
+            _pauseMenu.SetActive(true);
             
 
         }
@@ -52,10 +52,10 @@ public class Pause : MonoBehaviour
 
     public void PauseOff()
     {
-        if (_settingsMenu.activeSelf)// si le menu est activ� on le d�sac
+        if (_pauseMenu.activeSelf)// si le menu est activ� on le d�sac
         {
-            _settingsOnButton.SetActive(true);
-            _settingsMenu.SetActive(false);
+            _pauseOnButton.SetActive(true);
+            _pauseMenu.SetActive(false);
             //Time.timeScale = 1.0f;
             
 
