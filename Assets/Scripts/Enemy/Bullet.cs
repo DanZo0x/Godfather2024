@@ -22,4 +22,9 @@ public class Bullet : MonoBehaviour
 
         transform.position = new Vector2(newPosX, transform.position.y);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 19016687712237677}
   - component: {fileID: 745937920991328189}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.8866233, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.6087675, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42248cf90a6a6944ea3fdabfcbf3596a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 0
+  speedX: 3
   speedY: 0.7
   movementRange: 0.5
 --- !u!114 &19016687712237677
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed90460132145a48b8690c66ac245af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingSpeed: 1
+  reloadTime: 1
   bullet: {fileID: 2117449700213531749, guid: f008384ff81fe2a41a7411faf72f652c, type: 3}
   bulletSpeed: 10
   bulletLifeTime: 1
@@ -162,7 +162,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
