@@ -8,7 +8,7 @@ public class Leaderboard : MonoBehaviour
     public int value;
     public Text _score;
 
-    static Leaderboard instance;
+    public static Leaderboard instance;
 
     private void Start()
     {
