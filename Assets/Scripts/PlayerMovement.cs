@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D player1;
+    [SerializeField] private PlayerInputs playerInputs;
     [SerializeField] private PlayerInput playinp;
     
     [Space]
@@ -26,7 +27,18 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player1 = GetComponent<BoxCollider2D>();
+        playerInputs = new PlayerInputs();
         playinp = GetComponent<PlayerInput>();
+    }
+    
+    private void OnEnable()
+    {
+        playerInputs.Player1.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInputs.Player1.Disable();
     }
 
     void Update()
@@ -39,6 +51,19 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             _movementVector = context.ReadValue<Vector2>();
+        }
+        else if (context.canceled)
+        {
+            _movementVector = new Vector2(0, 0);
+        }
+    }
+
+    public void OnMovementKeyboard(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _movementVector.x = 1.0f;
+            Move();
         }
         else if (context.canceled)
         {
