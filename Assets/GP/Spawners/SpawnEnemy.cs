@@ -6,7 +6,6 @@ public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private float startSpawnTime = 5f;
     private bool start = false;
-    [SerializeField] private float spawnTime = 10f;
     [SerializeField] private float spawnZone = 10f;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
@@ -19,7 +18,7 @@ public class SpawnEnemy : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if ((!start && timer > startSpawnTime) || timer > spawnTime)
+        if ((!start && timer > startSpawnTime) || timer > vagues[vagueNb].timeNextVague)
         {
             if (!start) start = true;
             Spawn();
@@ -53,7 +52,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private IEnumerator spawnEnemy(GameObject enemy)
     {
-        yield return new WaitForSeconds(Random.Range(0, 9));
+        yield return new WaitForSeconds(Random.Range(0, vagues[vagueNb].spawnTime));
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = transform.position + Vector3.up * Random.Range(-spawnZone, spawnZone);
 
@@ -72,6 +71,8 @@ public class SpawnEnemy : MonoBehaviour
 [System.Serializable]
 public class Vague
 {
+    public float spawnTime = 10f;
+    public float timeNextVague = 15f;
     public int nbenemy1;
     public int nbenemy2;
     public int nbenemy3;

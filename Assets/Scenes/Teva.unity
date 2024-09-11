@@ -606,7 +606,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1236150202
 Transform:
   m_ObjectHideFlags: 0
@@ -1003,7 +1003,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2140625653
 Transform:
   m_ObjectHideFlags: 0
@@ -1032,40 +1032,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpawnTime: 5
-  spawnTime: 10
   spawnZone: 4
   enemy1: {fileID: 9093970216682691243, guid: e0876ed02c424cd47af13ab3ef826f00, type: 3}
   enemy2: {fileID: 9093970216682691243, guid: 0c46337a283d801439c524796f7d33ea, type: 3}
   enemy3: {fileID: 9093970216682691243, guid: 9d73cd03b7feb9949b08079b7044217b, type: 3}
   vagues:
-  - nbenemy1: 2
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 2
     nbenemy2: 1
     nbenemy3: 2
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 5
     nbenemy3: 0
-  - nbenemy1: 3
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 3
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
-  - nbenemy1: 0
+  - spawnTime: 10
+    timeNextVague: 15
+    nbenemy1: 0
     nbenemy2: 0
     nbenemy3: 0
 --- !u!1001 &1413423675471258508
