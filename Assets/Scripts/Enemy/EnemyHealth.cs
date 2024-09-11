@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int health = 1;
     [SerializeField] private bool shield = false;
+    [SerializeField] private int points = 10;
 
     public void TakeDamage()
     {
@@ -25,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        Leaderboard.instance.AddPoints(points);
         Destroy(gameObject);
     }
 }

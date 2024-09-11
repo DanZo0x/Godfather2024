@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obsacle : MonoBehaviour
 {
+    [SerializeField] private int points = 2;
     [SerializeField] private int maxHealth = 3;
     private int health;
 
@@ -20,6 +21,7 @@ public class Obsacle : MonoBehaviour
 
     private void Die()
     {
+        Leaderboard.instance.AddPoints(points);
         Destroy(gameObject);
     }
 }

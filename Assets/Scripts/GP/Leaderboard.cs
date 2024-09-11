@@ -5,10 +5,20 @@ using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour
 {
+    private HightScoreData scoreData;
+    private string _filePath = Application.persistentDataPath + "/HightScore.json";
     public int value;
     public Text _score;
 
     public static Leaderboard instance;
+
+    private void Awake()
+    {
+        if (!System.IO.File.Exists(_filePath))
+        {
+            Load();
+        }
+    }
 
     private void Start()
     {
@@ -40,4 +50,27 @@ public class Leaderboard : MonoBehaviour
         _score.text = value.ToString();
         Debug.Log(value);
     }
+    public void Save()
+    {
+        int[] saveInt = scoreData.scores;
+        scoreData.scores = new int[scoreData.scores.Length + 1];
+        for (int i = 0;i < saveInt.Length;i++)
+        { 
+            scoreData.scores[i] = saveInt[i]; 
+        }
+        scoreData.scores[scoreData.scores.Length-1] = value;
+        string save = JsonUtility.ToJson(scoreData);
+        System.IO.File.WriteAllText(_filePath, save);
+    }
+    public void Load()
+    {
+        string save = System.IO.File.ReadAllText(_filePath);
+        scoreData = JsonUtility.FromJson<HightScoreData>(save);
+    }
+}
+
+[System.Serializable]
+public class HightScoreData
+{
+    public int[] scores;
 }
