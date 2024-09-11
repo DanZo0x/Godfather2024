@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
     private void Move()
     {
         float newPosX = transform.position.x - speedX * Time.fixedDeltaTime;
-        if (movementRange!=0 & Mathf.Abs(transform.position.y - initialY) > movementRange) speedY *= -1;
+        if (movementRange!=0 & Mathf.Abs(Mathf.Abs(transform.position.y) - initialY) > movementRange) speedY *= -1;
         float newPosY = transform.position.y + speedY * Time.fixedDeltaTime;
 
         transform.position = new Vector2(newPosX, newPosY);
