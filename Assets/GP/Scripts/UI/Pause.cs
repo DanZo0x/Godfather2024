@@ -7,7 +7,6 @@ public class Pause : MonoBehaviour
 {
 
     [SerializeField] private GameObject _pauseMenu;
-    [SerializeField] private GameObject _pauseOnButton;
 
     //[SerializeField] DisplayObjective _displayObjective;
 
@@ -20,17 +19,10 @@ public class Pause : MonoBehaviour
     {
         PauseOff();
         _pauseMenu.SetActive(false);
-        _pauseOnButton.SetActive(true);
-
-
     }
 
     private void Reset()
     {
-        if (_pauseOnButton == null)
-        {
-            _pauseOnButton = GameObject.Find("SettingsOnBtn");
-        }
 
         if (_pauseMenu == null)
         {
@@ -42,10 +34,8 @@ public class Pause : MonoBehaviour
     {
         if (!_pauseMenu.activeSelf)
         {
-            _pauseOnButton.SetActive(false);
             _pauseMenu.SetActive(true);
             
-
         }
 
     }
@@ -54,7 +44,6 @@ public class Pause : MonoBehaviour
     {
         if (_pauseMenu.activeSelf)// si le menu est activ� on le d�sac
         {
-            _pauseOnButton.SetActive(true);
             _pauseMenu.SetActive(false);
             //Time.timeScale = 1.0f;
             

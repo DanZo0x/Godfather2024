@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Leaderboard : MonoBehaviour
 {
     private HightScoreData scoreData;
-    private string _filePath = Application.persistentDataPath + "/HightScore.json";
+    private string _filePath;
     public int value;
     public Text _score;
 
@@ -14,7 +14,8 @@ public class Leaderboard : MonoBehaviour
 
     private void Awake()
     {
-        if (!System.IO.File.Exists(_filePath))
+        _filePath = Application.persistentDataPath + "/HightScore.json";
+        if (System.IO.File.Exists(_filePath))
         {
             Load();
         }
@@ -38,6 +39,7 @@ public class Leaderboard : MonoBehaviour
         {
             value += points;
         }
+        _score.text = value.ToString();
     }
 
     public void Reset()
@@ -45,11 +47,6 @@ public class Leaderboard : MonoBehaviour
         value = 0;
     }
 
-    private void Update()
-    {
-        _score.text = value.ToString();
-        Debug.Log(value);
-    }
     public void Save()
     {
         int[] saveInt = scoreData.scores;

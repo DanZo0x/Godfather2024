@@ -24,7 +24,7 @@ public class EnemyShoot : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet =  Instantiate(bullet);
-        newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime);
+        newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime, transform.right);
         newBullet.transform.position = transform.position;
         newBullet.transform.eulerAngles = Vector3.left;
     }

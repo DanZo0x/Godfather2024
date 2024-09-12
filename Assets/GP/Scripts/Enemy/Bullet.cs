@@ -7,20 +7,27 @@ public class Bullet : MonoBehaviour
     private float speed;
     private float lifeTime;
     private float timer = 0;
+    private Rigidbody2D rb;
+    private Vector3 direction;
 
-    public void Init(float bulletSpeed, float bulletLifeTime)
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Init(float bulletSpeed, float bulletLifeTime, Vector3 target)
     {
         speed = bulletSpeed;
         lifeTime = bulletLifeTime;
+        direction = transform.position - target;
+        rb.velocity = direction * speed;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
         if (timer > lifeTime) Destroy(gameObject);
-        float newPosX = transform.position.x - speed * Time.fixedDeltaTime;
-
-        transform.position = new Vector2(newPosX, transform.position.y);
+        rb.velocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
