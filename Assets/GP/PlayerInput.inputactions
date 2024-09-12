@@ -78,17 +78,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7d42daa4-27e3-4508-b80e-74a1b762e4de",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller1",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d61b28bc-c2fc-480d-ad62-ecd4825dcc4e",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -155,7 +144,7 @@
             "bindingGroup": "Controller1",
             "devices": [
                 {
-                    "devicePath": "<Keyboard>",
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

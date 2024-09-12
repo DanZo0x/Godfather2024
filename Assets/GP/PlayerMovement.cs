@@ -6,11 +6,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D player1;
-    [SerializeField] private PlayerInput playinp;
     
     [Space]
     [Header("Checks")]
-    [SerializeField] private bool canMove = true;
+    [SerializeField] private bool canMoveVertical = true;
     
     [Space]
     [Header("Forward Movement")]
@@ -26,12 +25,14 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player1 = GetComponent<BoxCollider2D>();
-        playinp = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
-        Move();
+        if(_movementVector.sqrMagnitude > 0.1f)
+        {
+            Move();
+        }
     }
     
     public void OnMovement(InputAction.CallbackContext context)
@@ -72,7 +73,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        Vector2 newPosVector = new Vector2(transform.position.x + _movementVector.x * robotVelocity, transform.position.y);
+        float moveY = transform.position.y;
+        if (canMoveVertical) moveY += _movementVector.y * robotVelocity;
+        float moveX = transform.position.x + _movementVector.x * robotVelocity;
+        Vector2 newPosVector = new Vector2(moveX, moveY);
         rb.MovePosition(newPosVector);
     }
 }
