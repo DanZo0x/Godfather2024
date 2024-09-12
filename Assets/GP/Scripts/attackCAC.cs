@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class attackCAC : MonoBehaviour
 {
@@ -31,9 +32,9 @@ public class attackCAC : MonoBehaviour
         coll = GetComponent<Collider2D>();
     }
 
-    void Update()
+    public void OnPunch(InputAction.CallbackContext context)
     {
-        if (Input.GetButtonDown("Fire1") && !reloading)
+        if (context.performed && Input.GetButtonDown("Fire1") && !reloading)
         {
             reloading = true;
             anim.SetTrigger("attack");
@@ -52,7 +53,7 @@ public class attackCAC : MonoBehaviour
         colls = Physics2D.OverlapCircleAll(weapon.position, rayonAttack);
         foreach (Collider2D truc in colls)
         {
-            if (truc != null && truc.CompareTag("Enemy")) 
+            if (truc != null && truc.CompareTag("Obstacle")) 
                 Debug.Log("ennemy collision");
             {
                 truc.SendMessage("TakeDamage", degats, SendMessageOptions.DontRequireReceiver);
