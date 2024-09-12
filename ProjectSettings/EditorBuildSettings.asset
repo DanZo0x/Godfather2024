@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Teva.unity
     guid: dab4695d678601444b1a1bb1ff2643ea
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: fbdb72aed987d3b42a2d31f59ec52678
   m_configObjects: {}

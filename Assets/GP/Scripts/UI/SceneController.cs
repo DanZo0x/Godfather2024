@@ -8,17 +8,8 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnim;
-    [SerializeField] private GameObject parent;
     public static SceneController instance;
-    public event Action<GameObject> OnLoadSelect;
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += Set;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= Set;
-    }
+
     private void Awake()
     {
         if (instance == null)
@@ -31,22 +22,6 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    void Set(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name != "LevelSelection") return;
-        parent = FindObjectOfType<HorizontalLayoutGroup>().gameObject;
-        OnLoadSelect?.Invoke(parent);
-    }
-    public void SelectLevel()
-    {
-        //AudioManager.Instance.PlaySfx("Confirmer");
-        SceneManager.LoadScene("LevelSelection");
-        parent = FindObjectOfType<HorizontalLayoutGroup>().gameObject;
-        OnLoadSelect?.Invoke(parent);
-    }
-
-
-   
 
     public void Return()
     {
@@ -76,12 +51,6 @@ public class SceneController : MonoBehaviour
         _transitionAnim.SetTrigger("End");
     }
 
-    public void BackToLevels()
-    {
-        /*AudioManager.Instance.PlaySfx("Confirmer");
-        SceneManager.LoadScene("LevelSelection");
-        AudioManager.Instance.PlayMusic("MainMenuMusic");*/
-    }
     public void Quit()
     {
         Application.Quit();
