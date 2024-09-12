@@ -55,7 +55,7 @@ public class attackCAC : MonoBehaviour
             if (truc != null && truc.CompareTag("Enemy")) 
                 Debug.Log("ennemy collision");
             {
-                truc.SendMessage("takeDamage", degats, SendMessageOptions.DontRequireReceiver);
+                truc.SendMessage("TakeDamage", degats, SendMessageOptions.DontRequireReceiver);
                 if (effect != null)
                 {
                     effectSave = Instantiate(effect, truc.ClosestPoint(coll.bounds.center), Quaternion.identity);

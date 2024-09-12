@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Leaderboard.instance.AddPoints(points);
+        //Leaderboard.instance.AddPoints(points);
         Destroy(gameObject);
     }
 }
