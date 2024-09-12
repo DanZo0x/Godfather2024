@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 681926568}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 3, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -390,6 +390,7 @@ MonoBehaviour:
   target: {fileID: 1609107764}
   canMoveVertical: 1
   canMove: 1
+  follow: 1
   robotVelocity: 0.2
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -426,6 +427,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1013029176}
+  - {fileID: 1471720433}
+  - {fileID: 1490210775}
+  - {fileID: 1609107765}
   - {fileID: 681926569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -459,13 +463,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 7, z: 1}
+  m_LocalScale: {x: 3, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1413423675471258509}
-  - {fileID: 1471720433}
-  - {fileID: 1490210775}
-  - {fileID: 1609107765}
   m_Father: {fileID: 764396309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1013029177
@@ -558,6 +559,7 @@ MonoBehaviour:
   target: {fileID: 1490210774}
   canMoveVertical: 0
   canMove: 1
+  follow: 0
   robotVelocity: 0.2
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -946,6 +948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471720433}
   - component: {fileID: 1471720437}
+  - component: {fileID: 1471720438}
   m_Layer: 0
   m_Name: BodyPlayer2
   m_TagString: Untagged
@@ -961,12 +964,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471720432}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7142857, z: 0}
-  m_LocalScale: {x: 2, y: 0.15, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 3.25, z: 0}
+  m_LocalScale: {x: 1, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1013029176}
+  m_Father: {fileID: 764396309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1471720437
 SpriteRenderer:
@@ -1020,6 +1023,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1471720438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471720432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfefa4f8f0539a4c8329e2c2f0a0ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holder: {fileID: 1013029176}
+  target: {fileID: 681926569}
 --- !u!1 &1490210774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,11 +1066,11 @@ Transform:
   m_GameObject: {fileID: 1490210774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 0.47, z: 0}
-  m_LocalScale: {x: 1, y: 0.15, z: 1}
+  m_LocalPosition: {x: -1.46, y: 1.29, z: 0}
+  m_LocalScale: {x: 1, y: 1.0500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1013029176}
+  m_Father: {fileID: 764396309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1490210776
 MonoBehaviour:
@@ -1073,6 +1090,7 @@ MonoBehaviour:
   target: {fileID: 1013029175}
   canMoveVertical: 1
   canMove: 1
+  follow: 1
   robotVelocity: 0.4
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -1232,11 +1250,11 @@ Transform:
   m_GameObject: {fileID: 1609107764}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 0.21, z: 0}
-  m_LocalScale: {x: 1, y: 0.15, z: 1}
+  m_LocalPosition: {x: -1.46, y: -0.5300001, z: 0}
+  m_LocalScale: {x: 1, y: 1.0500001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1013029176}
+  m_Father: {fileID: 764396309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1609107766
 Rigidbody2D:
@@ -1328,6 +1346,7 @@ MonoBehaviour:
   target: {fileID: 681926568}
   canMoveVertical: 1
   canMove: 1
+  follow: 1
   robotVelocity: 0.4
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -1489,14 +1508,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025677136}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 771479e65a5a9fb409aa943d06a18f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedIncrementation: 1
-  progressiveSpeedMultiplier: 1
-  slowDownFactor: 1
+  speedIncrementation: 0.01
+  progressiveSpeedMultiplier: 0.01
+  slowDownFactor: 0.5
 --- !u!114 &2051146064 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2932871202639677652, guid: e65943742ee6d5848ab965313567dc3d, type: 3}

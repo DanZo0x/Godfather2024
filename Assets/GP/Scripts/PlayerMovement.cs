@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Checks")]
     [SerializeField] private bool canMoveVertical = true;
-    public bool canMove = true;
+    public bool canMove = true, follow = true;
+    private Vector3 offset, destination;
 
     private Vector2 _movementVector;
     [Range(0.0f, 1.0f)]
@@ -41,16 +42,26 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
+        offset = new Vector3(transform.position.x - CameraBehaviour.instance.transform.position.x, transform.position.y - CameraBehaviour.instance.transform.position.y);
+        destination = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if(_movementVector.sqrMagnitude > 0.1f && canMove)
+        if (follow)
         {
+            destination = CameraBehaviour.instance.transform.position + offset;
+            destination = new Vector3(destination.x, destination.y, 0);
+        }
+        if (_movementVector.sqrMagnitude > 0.1f && canMove)
+        {
+            offset = new Vector3(transform.position.x - CameraBehaviour.instance.transform.position.x, transform.position.y - CameraBehaviour.instance.transform.position.y);
             Move();
         }
+        MoveBlock();
+        rb.MovePosition(destination);
     }
-    
+
     public void OnMovement(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -98,14 +109,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        float moveY = transform.position.y;
+        float moveY = destination.y;
         if (canMoveVertical) moveY += _movementVector.y * robotVelocity;
-        float moveX = transform.position.x + _movementVector.x * robotVelocity;
+        float moveX = destination.x + _movementVector.x * robotVelocity;
+        destination = new Vector2(moveX, moveY);
+    }
+
+    private void MoveBlock()
+    {
+        float moveY = destination.y;
+        float moveX = destination.x; 
         if (moveX > blockCenter.transform.position.x + blockLeft) moveX = blockCenter.transform.position.x + blockLeft;
         if (moveX < blockCenter.transform.position.x + blockRight) moveX = blockCenter.transform.position.x + blockRight;
         if (moveY > blockCenter.transform.position.y + blockUp) moveY = blockCenter.transform.position.y + blockUp;
         if (moveY < blockCenter.transform.position.y + blockDown) moveY = blockCenter.transform.position.y + blockDown;
-        Vector2 newPosVector = new Vector2(moveX, moveY);
-        rb.MovePosition(newPosVector);
+        destination = new Vector2(moveX, moveY);
     }
 }
