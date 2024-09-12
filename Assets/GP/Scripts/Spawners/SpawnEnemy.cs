@@ -11,16 +11,17 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private GameObject enemy2;
     [SerializeField] private GameObject enemy3;
     [SerializeField] private Vague[] vagues;
-    private int vagueNb = 0;
+    private int vagueNb = -1;
     private float timer;
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if ((!start && timer > startSpawnTime) || timer > vagues[vagueNb].timeNextVague)
+        if ((!start && timer > startSpawnTime) || (start && timer > vagues[vagueNb].timeNextVague))
         {
             if (!start) start = true;
+            vagueNb++;
             Spawn();
             timer = 0;
         }
@@ -47,7 +48,6 @@ public class SpawnEnemy : MonoBehaviour
         { 
             //Random
         }
-        vagueNb++;
     }
 
     private IEnumerator spawnEnemy(GameObject enemy)

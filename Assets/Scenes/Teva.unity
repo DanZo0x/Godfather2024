@@ -1235,6 +1235,7 @@ MonoBehaviour:
   canMoveVertical: 1
   canMove: 1
   follow: 1
+  Player: 0
   robotVelocity: 0.6
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -2265,6 +2266,7 @@ MonoBehaviour:
   canMoveVertical: 1
   canMove: 1
   follow: 1
+  Player: 0
   robotVelocity: 0.4
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -2679,6 +2681,7 @@ MonoBehaviour:
   canMoveVertical: 1
   canMove: 1
   follow: 1
+  Player: 0
   robotVelocity: 0.4
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -3138,6 +3141,7 @@ MonoBehaviour:
   canMoveVertical: 0
   canMove: 1
   follow: 0
+  Player: 1
   robotVelocity: 0.2
   blockCenter: {fileID: 1082264941}
   blockUp: 5
@@ -4057,8 +4061,8 @@ MonoBehaviour:
     nbenemy3: 0
   - spawnTime: 10
     timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
+    nbenemy1: 1
+    nbenemy2: 1
     nbenemy3: 0
   - spawnTime: 10
     timeNextVague: 15
