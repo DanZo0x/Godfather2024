@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8356255475771147833}
   - component: {fileID: 1169209170938145027}
   - component: {fileID: 9007001501743345949}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CanonBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 704
+    m_Bits: 712
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

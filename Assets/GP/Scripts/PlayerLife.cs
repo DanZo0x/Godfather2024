@@ -22,7 +22,9 @@ public class PlayerLife : MonoBehaviour
         _health = _health - degats;
         if (_health <= 0)
         {
+            Leaderboard.instance.Save();
             _gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
         _healthScript.updatelife(_health);
     }

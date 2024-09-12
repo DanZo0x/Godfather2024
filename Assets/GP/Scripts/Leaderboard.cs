@@ -53,7 +53,7 @@ public class Leaderboard : MonoBehaviour
 
     public void AddPoints(int points)
     {
-        if (value > 0)
+        if (value >= 0)
         {
             value += points;
         }

@@ -21,6 +21,10 @@ public class Lazer : MonoBehaviour
             {
                 Destroy(obstacle);
             }
+            foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("Bullet"))
+            {
+                Destroy(bullet);
+            }
             collision.GetComponent<PlayerMovement>().ForceMove(respawn);
         }
     }
