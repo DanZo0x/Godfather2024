@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    public int _health = 3;
+    public int _health = 10;
     private int _maxHealth;
     private HealthBar _healthScript;
-    private Vector3 positionSpawn;
 
-    void Start()
+    void Awake()
     {
-        positionSpawn = transform.position;
         _maxHealth = _health;
         _healthScript = GameObject.FindObjectOfType<HealthBar>();
         _healthScript.updatelife(_health);
@@ -22,22 +20,17 @@ public class PlayerLife : MonoBehaviour
         _health = _health - degats;
         if (_health <= 0)
         {
-            SceneController.instance.Return();
+            //SceneController.instance.Return();
         }
         _healthScript.updatelife(_health);
     }
 
-    void OnTriggerEnter2D(Collider2D truc)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (truc.tag == "CheckPoint")
-        {
-            positionSpawn = transform.position;
-        }
-    }
+        if (collision != null && collision.CompareTag("Enemy"))
+            takeDamage(1);
+            Debug.Log("ennemy touched");
 
-    void respawn()
-    {
-        transform.position = positionSpawn;
     }
 }
+
