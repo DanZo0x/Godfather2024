@@ -3222,6 +3222,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 10
   _score: {fileID: 1991092826}
+  scoreTexts:
+  - {fileID: 678666755}
+  - {fileID: 1608597207}
+  - {fileID: 2001595688}
+  - {fileID: 1917764110}
 --- !u!4 &1697627892
 Transform:
   m_ObjectHideFlags: 0
@@ -3363,6 +3368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pv: []
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
 --- !u!114 &1720350335
 MonoBehaviour:
   m_ObjectHideFlags: 0
