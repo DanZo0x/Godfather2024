@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Bullet
   - Obstacle
+  - MusicSource
+  - SfxSource
   layers:
   - Default
   - TransparentFX
