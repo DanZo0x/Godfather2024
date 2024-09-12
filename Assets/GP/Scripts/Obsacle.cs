@@ -24,8 +24,10 @@ public class Obsacle : MonoBehaviour
         {
             spriteRenderer.sprite = damageSprites[0]; // Le sprite initial est celui correspondant à l'état intact
         }
+        UpdateSprite();
 
-        StartCoroutine(Destruction()); // Lancer cette coroutine dans la fonction TakeDamage
+        // Lancer cette coroutine dans la fonction TakeDamage
+        //StartCoroutine(Destruction()); 
     }
 
     public void TakeDamage()

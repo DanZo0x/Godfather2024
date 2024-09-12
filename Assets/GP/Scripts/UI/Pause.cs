@@ -17,7 +17,6 @@ public class Pause : MonoBehaviour
 
     void Start()
     {
-        PauseOff();
         _pauseMenu.SetActive(false);
     }
 
@@ -30,28 +29,20 @@ public class Pause : MonoBehaviour
         }
     }
 
-    public void PauseOn()
+    public void PauseOnOff()
     {
         if (!_pauseMenu.activeSelf)
         {
             _pauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }
-
-    }
-
-    public void PauseOff()
-    {
-        if (_pauseMenu.activeSelf)// si le menu est activ� on le d�sac
+        else
         {
             _pauseMenu.SetActive(false);
-            Time.timeScale = 1.0f;
-            
-
+            Time.timeScale = 1f;
         }
 
     }
-
     public void Restart()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
