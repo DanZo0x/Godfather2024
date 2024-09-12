@@ -35,7 +35,7 @@ public class Pause : MonoBehaviour
         if (!_pauseMenu.activeSelf)
         {
             _pauseMenu.SetActive(true);
-            
+            Time.timeScale = 0f;
         }
 
     }
