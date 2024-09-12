@@ -45,7 +45,7 @@ public class Pause : MonoBehaviour
         if (_pauseMenu.activeSelf)// si le menu est activ� on le d�sac
         {
             _pauseMenu.SetActive(false);
-            //Time.timeScale = 1.0f;
+            Time.timeScale = 1.0f;
             
 
         }
