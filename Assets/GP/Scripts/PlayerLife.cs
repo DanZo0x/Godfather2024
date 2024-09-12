@@ -7,9 +7,11 @@ public class PlayerLife : MonoBehaviour
     public int _health = 10;
     private int _maxHealth;
     private HealthBar _healthScript;
+    [SerializeField] private GameObject _gameOverPanel;
 
     void Awake()
     {
+        _gameOverPanel.SetActive(false);
         _maxHealth = _health;
         _healthScript = GameObject.FindObjectOfType<HealthBar>();
         _healthScript.updatelife(_health);
@@ -20,7 +22,7 @@ public class PlayerLife : MonoBehaviour
         _health = _health - degats;
         if (_health <= 0)
         {
-            //SceneController.instance.Return();
+            _gameOverPanel.SetActive(true);
         }
         _healthScript.updatelife(_health);
     }
