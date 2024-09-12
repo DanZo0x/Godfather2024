@@ -28,8 +28,8 @@ public class CanonMovement : MonoBehaviour
             timer = 0f;
 
             GameObject newBullet = Instantiate(bullet);
-            newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime, target.position);
             newBullet.transform.position = transform.position;
+            newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime, target.position);
         }
     }
 }

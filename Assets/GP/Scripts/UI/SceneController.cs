@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnim;
-    [SerializeField] GameObject childToPreserve;
     [SerializeField] private GameObject parent;
     public static SceneController instance;
     public event Action<GameObject> OnLoadSelect;
@@ -25,10 +24,6 @@ public class SceneController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //childToPreserve = GameObject.Find("CircleWipeTransition");
-            childToPreserve.transform.SetParent(null); // Détache l'enfant
-            DontDestroyOnLoad(childToPreserve);
-            //Si ça marche pas c que le script getButton récupere pas le sceneController
         }
 
     }

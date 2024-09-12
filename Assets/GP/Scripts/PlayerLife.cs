@@ -31,12 +31,9 @@ public class PlayerLife : MonoBehaviour
     {
         if (collider != null && collider.CompareTag("Enemy"))
             takeDamage(2);
-            Debug.Log("ennemy touched");
 
         if (collider != null && collider.CompareTag("Bullet"))
             takeDamage(1);
-        Debug.Log("ennemy touched");
-
     }
 }
 

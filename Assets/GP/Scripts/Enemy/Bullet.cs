@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     {
         speed = bulletSpeed;
         lifeTime = bulletLifeTime;
-        direction = transform.position - target;
+        direction = target - transform.position;
         rb.velocity = direction * speed;
     }
 

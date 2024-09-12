@@ -29,4 +29,13 @@ public class EnemyHealth : MonoBehaviour
         Leaderboard.instance.AddPoints(points);
         Destroy(gameObject);
     }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider != null && collider.CompareTag("Player"))
+            Destroy(gameObject);
+
+        if (collider != null && collider.CompareTag("Bullet"))
+            TakeDamage();
+    }
 }
