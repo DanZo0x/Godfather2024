@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Checks")]
     [SerializeField] private bool canMoveVertical = true;
-    public bool canMove = true, follow = true;
+    public bool canMove = true, follow = true, Player = false;
     private Vector3 offset, destination;
 
     private Vector2 _movementVector;
@@ -67,10 +67,12 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             _movementVector = context.ReadValue<Vector2>();
+            if(Player && !GetComponent<Animator>().GetBool("isWalking")) GetComponent<Animator>().SetBool("isWalking", true);
         }
         else if (context.canceled)
         {
             _movementVector = new Vector2(0, 0);
+            if (Player && GetComponent<Animator>().GetBool("isWalking")) GetComponent<Animator>().SetBool("isWalking", false);
         }
     }
     
