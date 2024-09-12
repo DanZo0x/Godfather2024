@@ -52,9 +52,10 @@ public class attackCAC : MonoBehaviour
         colls = Physics2D.OverlapCircleAll(weapon.position, rayonAttack);
         foreach (Collider2D truc in colls)
         {
-            if (truc.tag == "Enemy")
+            if (truc != null && truc.CompareTag("Enemy")) 
+                Debug.Log("ennemy collision");
             {
-                truc.SendMessage("takeDamage", degats);
+                truc.SendMessage("takeDamage", degats, SendMessageOptions.DontRequireReceiver);
                 if (effect != null)
                 {
                     effectSave = Instantiate(effect, truc.ClosestPoint(coll.bounds.center), Quaternion.identity);
@@ -67,7 +68,7 @@ public class attackCAC : MonoBehaviour
                 Destroy(effectSave, 2f);
             }
         }
-        Debug.Log("PAF !");
+        //Debug.Log("PAF !");
     }
 
     private void OnDrawGizmos()
