@@ -3175,6 +3175,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 10
   _score: {fileID: 1991092826}
+  scoreTexts:
+  - {fileID: 678666755}
+  - {fileID: 1608597207}
+  - {fileID: 2001595688}
+  - {fileID: 1917764110}
 --- !u!4 &1697627892
 Transform:
   m_ObjectHideFlags: 0
