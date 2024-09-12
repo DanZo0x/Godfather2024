@@ -25,11 +25,15 @@ public class PlayerLife : MonoBehaviour
         _healthScript.updatelife(_health);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision != null && collision.CompareTag("Enemy"))
-            takeDamage(1);
+        if (collider != null && collider.CompareTag("Enemy"))
+            takeDamage(2);
             Debug.Log("ennemy touched");
+
+        if (collider != null && collider.CompareTag("Bullet"))
+            takeDamage(1);
+        Debug.Log("ennemy touched");
 
     }
 }
