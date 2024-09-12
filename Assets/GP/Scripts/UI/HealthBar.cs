@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    private GameObject[] _pv;
+    [SerializeField] private GameObject[] _pv;
 
     private void Awake()
     {
