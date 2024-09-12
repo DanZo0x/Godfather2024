@@ -74,13 +74,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            
-        }
-    }
     
     public void OnPunch(InputAction.CallbackContext context)
     {

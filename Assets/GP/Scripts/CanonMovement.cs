@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CanonMovement : MonoBehaviour
 {
@@ -19,5 +20,12 @@ public class CanonMovement : MonoBehaviour
         transform.position = holder.position + offset;
         Vector2 direction = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
         transform.up = direction;
+    }
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+
+        }
     }
 }
