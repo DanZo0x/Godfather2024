@@ -8,47 +8,84 @@ public class Obsacle : MonoBehaviour
     [SerializeField] private int maxHealth = 3;
     private int health;
 
-    [SerializeField] private Color flashColor = Color.white; // Couleur du flash
+    [SerializeField] private Color flashColor = Color.red; // Couleur du flash
     [SerializeField] private float flashDuration = 0.1f; // Durée du flash
-    [SerializeField] private GameObject _building;
+
+    [SerializeField] private Sprite[] damageSprites; // Tableau des sprites pour chaque niveau de dégâts
+    private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer de l'obstacle
 
     void Start()
     {
-        health = Random.Range(1, maxHealth + 1);
+        health = Random.Range(1, maxHealth + 1); // Initialise la santé entre 1 et maxHealth
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Récupère le SpriteRenderer attaché à l'obstacle
+
+        // Assure-toi que l'obstacle commence avec le sprite correspondant à sa santé maximale
+        if (damageSprites.Length > 0 && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = damageSprites[0]; // Le sprite initial est celui correspondant à l'état intact
+        }
+
+        StartCoroutine(Destruction()); // Lancer la coroutine de destruction automatique
     }
 
     public void TakeDamage()
     {
-        StartCoroutine(FlashAndDeactivate(_building));
         health -= 1;
-        if (health <= 0) Die();
+
+        // Changer le sprite correspondant à l'état actuel de l'obstacle
+        UpdateSprite();
+
+        // Lance le flash de dégât
+        StartCoroutine(FlashAndDeactivate());
+
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     private void Die()
     {
         Leaderboard.instance.AddPoints(points);
+
         Destroy(gameObject);
     }
 
-    private IEnumerator FlashAndDeactivate(GameObject obj)
+    private IEnumerator FlashAndDeactivate()
     {
-        SpriteRenderer skin = obj.GetComponent<SpriteRenderer>(); // On récupère le composant Image
-
-        if (skin != null)
+        if (spriteRenderer != null)
         {
-            Color originalColor = skin.color; // Sauvegarder la couleur d'origine
+            Color originalColor = spriteRenderer.color; // Sauvegarder la couleur d'origine
 
             // Changer la couleur en couleur flash
-            skin.color = flashColor;
-
-            // Attendre un court instant
+            spriteRenderer.color = flashColor;
             yield return new WaitForSeconds(flashDuration);
 
             // Remettre la couleur d'origine
-            skin.color = originalColor;
+            spriteRenderer.color = originalColor;
+        }
+    }
 
-            // Désactiver l'objet
-            obj.SetActive(false);
+    // Méthode pour changer le sprite en fonction des dégâts
+    private void UpdateSprite()
+    {
+        if (spriteRenderer != null && damageSprites.Length > 0)
+        {
+            // Calculer l'index du sprite en fonction des dégâts
+            int spriteIndex = Mathf.Clamp(maxHealth - health, 0, damageSprites.Length - 1);
+
+            // Changer le sprite en fonction de l'état actuel
+            spriteRenderer.sprite = damageSprites[spriteIndex];
+        }
+    }
+
+    // Coroutine pour infliger des dégâts à intervalles réguliers
+    private IEnumerator Destruction()
+    {
+        while (health > 0)
+        {
+            yield return new WaitForSeconds(1); // Attend un certain temps avant de réinfliger des dégâts
+            TakeDamage(); // Inflige des dégâts
         }
     }
 }
