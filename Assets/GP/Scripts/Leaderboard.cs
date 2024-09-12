@@ -41,6 +41,7 @@ public class Leaderboard : MonoBehaviour
     private void Start()
     {
         instance = this;
+        _score.text = value.ToString();
     }
 
     //Constructeur

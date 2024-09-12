@@ -101,6 +101,14 @@ public class PlayerMovement : MonoBehaviour
         destination = new Vector2(moveX, moveY);
     }
 
+    public void ForceMove(Vector3 move)
+    {
+        float moveY = destination.y;
+        if (canMoveVertical) moveY += move.y;
+        float moveX = destination.x + move.x;
+        destination = new Vector2(moveX, moveY);
+    }
+
     private void MoveBlock()
     {
         float moveY = destination.y;
