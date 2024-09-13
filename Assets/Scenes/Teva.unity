@@ -1378,7 +1378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitionAnim: {fileID: 0}
-  parent: {fileID: 0}
 --- !u!1 &678666753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,8 +2215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af7de79395047f468233bd816a5d684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimeMin: 10
-  spawnTimeMax: 20
+  spawnTimeMin: 5
+  spawnTimeMax: 15
   obstacle: {fileID: 251731854495533188, guid: 85d116d039054f14283a9e1e40316c7a, type: 3}
 --- !u!1001 &1240927514
 PrefabInstance:
@@ -2689,7 +2688,7 @@ MonoBehaviour:
   blockCenter: {fileID: 1082264941}
   blockUp: 5
   blockDown: -5
-  blockLeft: 0
+  blockLeft: 3
   blockRight: -3
 --- !u!50 &1490210777
 Rigidbody2D:
@@ -3104,7 +3103,7 @@ MonoBehaviour:
   blockCenter: {fileID: 1082264941}
   blockUp: 5
   blockDown: -5
-  blockLeft: 0
+  blockLeft: 3
   blockRight: -3
 --- !u!212 &1609107769
 SpriteRenderer:
@@ -3639,7 +3638,7 @@ MonoBehaviour:
   canMove: 1
   follow: 0
   Player: 1
-  robotVelocity: 0.2
+  robotVelocity: 0.02
   blockCenter: {fileID: 1082264941}
   blockUp: 5
   blockDown: -5
@@ -4763,56 +4762,56 @@ MonoBehaviour:
   enemy2: {fileID: 9093970216682691243, guid: 0c46337a283d801439c524796f7d33ea, type: 3}
   enemy3: {fileID: 9093970216682691243, guid: 9d73cd03b7feb9949b08079b7044217b, type: 3}
   vagues:
-  - spawnTime: 10
+  - spawnTime: 1
+    timeNextVague: 10
+    nbenemy1: 3
+    nbenemy2: 0
+    nbenemy3: 0
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 6
+    nbenemy2: 0
+    nbenemy3: 0
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 4
+    nbenemy2: 3
+    nbenemy3: 0
+  - spawnTime: 5
     timeNextVague: 10
     nbenemy1: 2
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 1
-    nbenemy2: 1
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
-  - spawnTime: 10
-    timeNextVague: 15
-    nbenemy1: 0
-    nbenemy2: 0
-    nbenemy3: 0
+    nbenemy2: 5
+    nbenemy3: 1
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 2
+    nbenemy2: 2
+    nbenemy3: 4
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 5
+    nbenemy2: 3
+    nbenemy3: 4
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 5
+    nbenemy2: 4
+    nbenemy3: 4
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 7
+    nbenemy2: 5
+    nbenemy3: 6
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 7
+    nbenemy2: 8
+    nbenemy3: 4
+  - spawnTime: 5
+    timeNextVague: 10
+    nbenemy1: 10
+    nbenemy2: 10
+    nbenemy3: 10
 --- !u!1001 &1413423675471258508
 PrefabInstance:
   m_ObjectHideFlags: 0
