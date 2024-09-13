@@ -8,12 +8,14 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private bool shield = false;
     [SerializeField] private int points = 10;
     [SerializeField] private float forceDying = 10;
+    [SerializeField] private GameObject explosion;
 
     public void TakeDamage()
     {
         if (shield)
         {
             shield = false;
+            GetComponent<Animator>().SetTrigger("Degat");
         }
         else
         {
@@ -30,6 +32,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (!GetComponent<Rigidbody2D>())
         {
+            GameObject boom = Instantiate(explosion);
+            boom.transform.position = transform.position;
             Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(Vector2.left * forceDying);
@@ -37,7 +41,9 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<EnemyHealth>().enabled = false;
             GetComponent<EnemyShoot>().enabled = false;
             gameObject.tag = "Untagged";
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(0.7f);
+            Destroy(boom);
+            yield return new WaitForSeconds(3f);
             Destroy(gameObject);
         }
     }
