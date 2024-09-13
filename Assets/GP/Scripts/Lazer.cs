@@ -7,6 +7,11 @@ public class Lazer : MonoBehaviour
     [SerializeField] private int damage = 2;
     [SerializeField] private Vector3 respawn;
 
+    private void Start()
+    {
+        AudioManagerSingleton.Instance.LaserLoop.Play();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null && collision.GetComponent<PlayerLife>())
@@ -15,7 +20,7 @@ public class Lazer : MonoBehaviour
 
             foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                Destroy(enemy);
+                StartCoroutine(collision.GetComponent<EnemyHealth>().Die());
             }
             foreach (GameObject obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
             {

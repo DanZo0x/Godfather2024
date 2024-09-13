@@ -103,6 +103,7 @@ MonoBehaviour:
   health: 1
   shield: 0
   points: 100
+  forceDying: 200
 --- !u!114 &5700661468526477223
 MonoBehaviour:
   m_ObjectHideFlags: 0
