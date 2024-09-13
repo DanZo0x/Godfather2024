@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   shield: 0
-  points: 10
+  points: 100
 --- !u!114 &5700661468526477223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42248cf90a6a6944ea3fdabfcbf3596a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 2
+  speedX: 1
   speedY: 0
   movementRange: 0
 --- !u!114 &19016687712237677
@@ -130,9 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed90460132145a48b8690c66ac245af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 1
+  reloadTime: 3
   bullet: {fileID: 2117449700213531749, guid: f008384ff81fe2a41a7411faf72f652c, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 5
   bulletLifeTime: 3
 --- !u!58 &745937920991328189
 CircleCollider2D:
