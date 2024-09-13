@@ -1,33 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Credits : MonoBehaviour
 {
-    /*[SerializeField] GameObject _creditsPanel;
-    [SerializeField] GameObject _creditsOffBtn;
-    [SerializeField] Animator _creditAnim;*/
+    public Button _returnButton;
 
-    private void Start()
+    [SerializeField] private GameObject defaultSelectedButton; // Le bouton par défaut à sélectionner quand le menu pause est affiché
+
+    void Start()
     {
-       /* _creditsPanel.SetActive(false);
-        _creditsOffBtn.SetActive(false);*/
+
+        defaultSelectedButton = _returnButton.gameObject;
+        EventSystem.current.SetSelectedGameObject(defaultSelectedButton);
     }
 
     public void ShowCredits()
     {
         SceneManager.LoadScene("Credits");
-        /*_creditsPanel.SetActive(true);
-        _creditsOffBtn.SetActive(true);
-        _creditAnim.SetTrigger("Start");
-        AudioManager.Instance.PlaySfx("Confirmer");*/
+        //AudioManager.Instance.PlaySfx("Confirmer");*/
     }
 
-    /*public void HideCredits()
-    {
-        _creditsPanel.SetActive(false);
-        _creditsOffBtn.SetActive(false);
-        //AudioManager.Instance.PlaySfx("Retour");
-    }*/
 }
