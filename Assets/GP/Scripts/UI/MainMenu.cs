@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Animator _transitionAnim;
 
-    public InputField _inputField;
     public Button _startButton;
     public Button _quitButton;
     public Button _creditsButton;
@@ -18,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        defaultSelectedButton = _inputField.gameObject;
+        defaultSelectedButton = _startButton.gameObject;
         EventSystem.current.SetSelectedGameObject(defaultSelectedButton);
     }
 
