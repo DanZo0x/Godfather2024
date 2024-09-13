@@ -27,6 +27,7 @@ public class SceneController : MonoBehaviour
     {
         //AudioManager.Instance.PlaySfx("Retour");
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1.0f;
         //AudioManager.Instance.PlayMusic("MainMenuMusic");
     }
 
