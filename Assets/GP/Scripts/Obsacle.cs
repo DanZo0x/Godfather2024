@@ -14,6 +14,8 @@ public class Obsacle : MonoBehaviour
     [SerializeField] private Sprite[] damageSprites; // Tableau des sprites pour chaque niveau de dégâts
     private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer de l'obstacle
 
+    [SerializeField] private AudioClip DestroySound;
+
     void Start()
     {
         health = Random.Range(1, maxHealth + 1); // Initialise la santé entre 1 et maxHealth
@@ -49,7 +51,7 @@ public class Obsacle : MonoBehaviour
     private void Die()
     {
         Leaderboard.instance.AddPoints(points);
-        //AudioManagerSingleton.Instance.BatimentDestroy.Play();
+        AudioManager.Instance.sfxSource.PlayOneShot(DestroySound);
         Destroy(gameObject);
     }
 

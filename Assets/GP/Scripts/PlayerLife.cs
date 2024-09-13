@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private Color flashColor = Color.red; // Couleur du flash
     [SerializeField] private float flashDuration = 0.1f; // Durée du flash
     private SpriteRenderer spriteRenderer; // Référence au SpriteRenderer de l'obstacle
+    [SerializeField] private AudioClip PlayerDamage;
 
     void Awake()
     {
@@ -25,6 +27,7 @@ public class PlayerLife : MonoBehaviour
     {
         // Lance le flash de dégât
         StartCoroutine(FlashAndDeactivate());
+        AudioManager.Instance.sfxSource.PlayOneShot(PlayerDamage);
         _health = _health - degats;
         if (_health <= 0)
         {

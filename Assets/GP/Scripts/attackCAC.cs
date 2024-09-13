@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.LowLevel;
 
 public class attackCAC : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class attackCAC : MonoBehaviour
     private GameObject effectSave;
     private Vector2 direction;
     private float angleEffect;
+    [SerializeField] private AudioClip Punch;
 
     private Collider2D coll;
 
@@ -36,6 +38,7 @@ public class attackCAC : MonoBehaviour
     {
         if (context.performed && !reloading && !anim.GetBool("isWalking"))
         {
+            AudioManager.Instance.sfxSource.PlayOneShot(Punch);
             reloading = true;
             anim.SetTrigger("attack");
             StartCoroutine(reload());
