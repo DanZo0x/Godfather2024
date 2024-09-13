@@ -7,7 +7,7 @@ public class MunitionBar : MonoBehaviour
 {
     [SerializeField] private GameObject[] _munition;
     [SerializeField] private Color flashColor = Color.yellow; // Couleur du flash
-    [SerializeField] private float flashDuration = 0.1f; // Durée du flash
+    [SerializeField] private float flashDuration = 1f; // Durée du flash
 
     private void Awake()
     {
@@ -19,11 +19,11 @@ public class MunitionBar : MonoBehaviour
         }
     }
 
-    public void updateMunition(int vie)
+    public void updateMunition(int munition)
     {
         for (int i = 0; i < _munition.Length; i++)
         {
-            if (i < vie)
+            if (i < munition)
             {
                 _munition[i].SetActive(true);
             }

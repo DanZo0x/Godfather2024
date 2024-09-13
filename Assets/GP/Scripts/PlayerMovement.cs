@@ -66,13 +66,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            AudioManagerSingleton.Instance.RobotStepLoop.Play();
+            //AudioManagerSingleton.Instance.RobotStepLoop.Play();
             _movementVector = context.ReadValue<Vector2>();
             if(Player && !GetComponent<Animator>().GetBool("isWalking")) GetComponent<Animator>().SetBool("isWalking", true);
         }
         else if (context.canceled)
         {
-            AudioManagerSingleton.Instance.RobotStepLoop.Stop();
+            //AudioManagerSingleton.Instance.RobotStepLoop.Stop();
             _movementVector = new Vector2(0, 0);
             if (Player && GetComponent<Animator>().GetBool("isWalking")) GetComponent<Animator>().SetBool("isWalking", false);
         }

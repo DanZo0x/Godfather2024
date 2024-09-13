@@ -44,7 +44,7 @@ public class CanonMovement : MonoBehaviour
     {
         if (munition > 0 && timer > reloadTime && context.performed)
         {
-            AudioManagerSingleton.Instance.TirLaser.Play();
+            //AudioManagerSingleton.Instance.TirLaser.Play();
             timer = 0f;
             munition--;
             munitionBar.updateMunition(munition);

@@ -9,7 +9,7 @@ public class Lazer : MonoBehaviour
 
     private void Start()
     {
-        AudioManagerSingleton.Instance.LaserLoop.Play();
+        //AudioManagerSingleton.Instance.LaserLoop.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
