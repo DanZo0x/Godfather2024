@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class EnemyShoot : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletSpeed = 1.0f;
     [SerializeField] private float bulletLifeTime = 10.0f;
+    [SerializeField] private AudioClip ShootEnemy;
     private float timer = 0f;
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void Shoot()
     {
-        //AudioManagerSingleton.Instance.TirAlt.Play();
+        AudioManager.Instance.sfxSource.PlayOneShot(ShootEnemy);
         GameObject newBullet =  Instantiate(bullet);
         newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime, -transform.right);
         newBullet.transform.position = transform.position;

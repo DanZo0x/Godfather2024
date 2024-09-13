@@ -106,6 +106,7 @@ MonoBehaviour:
   points: 300
   forceDying: 200
   explosion: {fileID: 3353122006978004896, guid: d9692d5ce8be8d54082d4344512fd634, type: 3}
+  EnemyDamage: {fileID: 8300000, guid: 2ef7d96f03f512f46838701e217de5e1, type: 3}
 --- !u!114 &5700661468526477223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   bullet: {fileID: 2117449700213531749, guid: f008384ff81fe2a41a7411faf72f652c, type: 3}
   bulletSpeed: 6
   bulletLifeTime: 3
+  ShootEnemy: {fileID: 8300000, guid: b184ca014a7775341b7cf9f3cc75e5ee, type: 3}
 --- !u!58 &745937920991328189
 CircleCollider2D:
   m_ObjectHideFlags: 0

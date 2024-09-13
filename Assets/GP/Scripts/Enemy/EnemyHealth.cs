@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int points = 10;
     [SerializeField] private float forceDying = 10;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private AudioClip EnemyDamage;
 
     public void TakeDamage()
     {
+        AudioManager.Instance.sfxSource.PlayOneShot(EnemyDamage);
         if (shield)
         {
             shield = false;

@@ -6,10 +6,11 @@ public class Lazer : MonoBehaviour
 {
     [SerializeField] private int damage = 2;
     [SerializeField] private Vector3 respawn;
+    [SerializeField] private AudioClip LazerStart,LazerLoop;
 
     private void Start()
     {
-        //AudioManagerSingleton.Instance.LaserLoop.Play();
+        AudioManager.Instance.sfxSource.PlayOneShot(LazerStart);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

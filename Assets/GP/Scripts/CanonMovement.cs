@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.LowLevel;
 using UnityEngine.UI;
 
 public class CanonMovement : MonoBehaviour
@@ -17,6 +18,7 @@ public class CanonMovement : MonoBehaviour
     [SerializeField] private float bulletSpeed = 1.0f;
     [SerializeField] private float bulletLifeTime = 10.0f;
     private float timer = 0f, timer2 = 0f;
+    [SerializeField] private AudioClip ShootPlayer;
 
     private void Start()
     {
@@ -44,7 +46,7 @@ public class CanonMovement : MonoBehaviour
     {
         if (munition > 0 && timer > reloadTime && context.performed)
         {
-            //AudioManagerSingleton.Instance.TirLaser.Play();
+            AudioManager.Instance.sfxSource.PlayOneShot(ShootPlayer);
             timer = 0f;
             munition--;
             munitionBar.updateMunition(munition);

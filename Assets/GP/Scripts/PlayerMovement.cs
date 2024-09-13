@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _movementVector;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float robotVelocity = 1.0f;
+    [SerializeField] private AudioClip MoveSound;
 
 
     [Space]
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            //AudioManagerSingleton.Instance.RobotStepLoop.Play();
+            AudioManager.Instance.sfxSource.PlayOneShot(MoveSound);
             _movementVector = context.ReadValue<Vector2>();
             if(Player && !GetComponent<Animator>().GetBool("isWalking")) GetComponent<Animator>().SetBool("isWalking", true);
         }
