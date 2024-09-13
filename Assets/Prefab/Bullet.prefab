@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e89aac1521fa5c4ba4fac81cebadb98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: 1
+  flashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  flashDuration: 0.1
 --- !u!58 &1169209170938145027
 CircleCollider2D:
   m_ObjectHideFlags: 0
