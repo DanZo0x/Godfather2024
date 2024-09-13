@@ -3577,7 +3577,7 @@ MonoBehaviour:
   munitionText: {fileID: 317955928}
   reloadTime: 1
   bullet: {fileID: 2117449700213531749, guid: 8d64ed574aae5f24fb001f81cd5db20e, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 8
   bulletLifeTime: 10
 --- !u!1 &1490210774
 GameObject:
@@ -3594,7 +3594,7 @@ GameObject:
   - component: {fileID: 1490210777}
   m_Layer: 6
   m_Name: Drone1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 1609107766}
   m_Layer: 6
   m_Name: Drone2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -34,7 +34,7 @@ public class attackCAC : MonoBehaviour
 
     public void OnPunch(InputAction.CallbackContext context)
     {
-        if (context.performed && Input.GetButtonDown("Fire1") && !reloading)
+        if (context.performed && !reloading && !anim.GetBool("isWalking"))
         {
             reloading = true;
             anim.SetTrigger("attack");
