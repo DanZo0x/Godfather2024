@@ -8,7 +8,7 @@ public class Leaderboard : MonoBehaviour
     private HighScoreData scoreData;
     private string _filePath;
     public int value;
-    public Text _score;
+    public Text _score, _scoreFinal;
     public Text[] scoreTexts;
 
     public static Leaderboard instance;
@@ -58,6 +58,7 @@ public class Leaderboard : MonoBehaviour
             value += points;
         }
         _score.text = value.ToString();
+        _scoreFinal.text = value.ToString();
     }
 
     public void Reset()
