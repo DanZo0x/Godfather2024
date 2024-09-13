@@ -1219,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3508514282611938385, guid: 91abdfce8f6d6694491f5c029376e221, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5273988255038549469, guid: 91abdfce8f6d6694491f5c029376e221, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6391,6 +6395,7 @@ GameObject:
   - component: {fileID: 2025677138}
   - component: {fileID: 2025677137}
   - component: {fileID: 2025677140}
+  - component: {fileID: 2025677141}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6491,6 +6496,19 @@ MonoBehaviour:
   speedIncrementation: 0.01
   progressiveSpeedMultiplier: 0.01
   slowDownFactor: 0.5
+--- !u!114 &2025677141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025677136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7da14c05f1b7e4eb81b5afb997310f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelMusic: {fileID: 0}
 --- !u!114 &2051146064 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2932871202639677652, guid: e65943742ee6d5848ab965313567dc3d, type: 3}

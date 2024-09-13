@@ -14,7 +14,7 @@ public class Credits : MonoBehaviour
     void Start()
     {
 
-        defaultSelectedButton = _returnButton.gameObject;
+        //defaultSelectedButton = _returnButton.gameObject;
         EventSystem.current.SetSelectedGameObject(defaultSelectedButton);
     }
 

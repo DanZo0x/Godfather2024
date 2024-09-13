@@ -39,11 +39,11 @@ public class AudioManager : MonoBehaviour
         sfxSource = sfxSourceObj.GetComponent<AudioSource>();
     }
 
-    void Start()
+    /*void Start()
     {
         musicSource.clip = menuMusic;
         musicSource.Play();
-    }
+    }*/
 
     public void PlayMusic(AudioClip clip)
     {

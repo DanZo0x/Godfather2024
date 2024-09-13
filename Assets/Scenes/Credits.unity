@@ -272,7 +272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Simon
+  m_Text: Simon Philippe
 --- !u!222 &240676962
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -102}
-  m_SizeDelta: {x: 160, y: 45.498}
+  m_SizeDelta: {x: 500, y: 45.498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393934181
 MonoBehaviour:
@@ -505,7 +505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "L\xE9opold"
+  m_Text: "L\xE9opold Walho"
 --- !u!222 &393934182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dan
+  m_Text: Dan Cheype
 --- !u!222 &692076977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -55}
-  m_SizeDelta: {x: 160, y: 38.8561}
+  m_SizeDelta: {x: 500, y: 38.8561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917673987
 MonoBehaviour:
@@ -834,7 +834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Raymond
+  m_Text: Raymond Herrlya
 --- !u!222 &917673988
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mathis
+  m_Text: Mathis Pham
 --- !u!222 &1118949087
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1149,7 +1149,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "T\xE9va"
+  m_Text: "T\xE9va Foug\xE8res"
 --- !u!222 &1294195595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1274,7 +1274,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -67.56604}
-  m_SizeDelta: {x: 160, y: 47.7122}
+  m_SizeDelta: {x: 500, y: 47.7122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460142141
 MonoBehaviour:
@@ -1309,7 +1309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Juan
+  m_Text: Juan Kauffmann
 --- !u!222 &1460142142
 CanvasRenderer:
   m_ObjectHideFlags: 0

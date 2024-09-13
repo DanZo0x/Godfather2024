@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - MusicSource
   - SfxSource
+  - AudioManager
   layers:
   - Default
   - TransparentFX
