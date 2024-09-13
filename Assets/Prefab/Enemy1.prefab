@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reloadTime: 3
   bullet: {fileID: 2117449700213531749, guid: f008384ff81fe2a41a7411faf72f652c, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 3
   bulletLifeTime: 3
 --- !u!58 &745937920991328189
 CircleCollider2D:
