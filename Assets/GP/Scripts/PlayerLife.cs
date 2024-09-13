@@ -45,7 +45,7 @@ public class PlayerLife : MonoBehaviour
     }
     private IEnumerator FlashAndDeactivate()
     {
-        if (spriteRenderer != null)
+        if (spriteRenderer != null && spriteRenderer.color != flashColor)
         {
             Color originalColor = spriteRenderer.color; // Sauvegarder la couleur d'origine
 

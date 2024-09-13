@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class MunitionBar : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _pv;
+    [SerializeField] private GameObject[] _munition;
     [SerializeField] private Color flashColor = Color.yellow; // Couleur du flash
     [SerializeField] private float flashDuration = 0.1f; // Durée du flash
 
     private void Awake()
     {
-        _pv = new GameObject[transform.childCount];
+        _munition = new GameObject[transform.childCount];
 
-        for (int i = 0; i < _pv.Length; i++)
+        for (int i = 0; i < _munition.Length; i++)
         {
-            _pv[i] = transform.GetChild(i).gameObject;
+            _munition[i] = transform.GetChild(i).gameObject;
         }
     }
 
-    public void updatelife(int vie)
+    public void updateMunition(int vie)
     {
-        for (int i = 0; i < _pv.Length; i++)
+        for (int i = 0; i < _munition.Length; i++)
         {
             if (i < vie)
             {
-                _pv[i].SetActive(true);
+                _munition[i].SetActive(true);
             }
             else
             {
-                StartCoroutine(FlashAndDeactivate(_pv[i]));
+                StartCoroutine(FlashAndDeactivate(_munition[i]));
             }
         }
     }

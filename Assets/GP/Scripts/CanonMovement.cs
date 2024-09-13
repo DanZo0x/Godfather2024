@@ -11,7 +11,7 @@ public class CanonMovement : MonoBehaviour
     [SerializeField] private float reloadMunition = 2f;
     [SerializeField] private int munitionMax = 10;
     private int munition;
-    public Text munitionText;
+    private MunitionBar munitionBar;
     [SerializeField] private float reloadTime = 1.0f;
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletSpeed = 1.0f;
@@ -21,7 +21,8 @@ public class CanonMovement : MonoBehaviour
     private void Start()
     {
         munition = munitionMax;
-        munitionText.text = munition.ToString();
+        munitionBar = GameObject.FindObjectOfType<MunitionBar>();
+        munitionBar.updateMunition(munition);
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class CanonMovement : MonoBehaviour
         {
             timer2 = 0f;
             munition++;
-            munitionText.text = munition.ToString();
+            munitionBar.updateMunition(munition);
         }
     }
     public void OnShoot(InputAction.CallbackContext context)
@@ -46,7 +47,7 @@ public class CanonMovement : MonoBehaviour
             AudioManagerSingleton.Instance.TirLaser.Play();
             timer = 0f;
             munition--;
-            munitionText.text = munition.ToString();
+            munitionBar.updateMunition(munition);
             GameObject newBullet = Instantiate(bullet);
             newBullet.transform.position = transform.position;
             newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime, target.position);
