@@ -23,6 +23,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void Shoot()
     {
+        AudioManagerSingleton.Instance.TirAlt.Play();
         GameObject newBullet =  Instantiate(bullet);
         newBullet.GetComponent<Bullet>().Init(bulletSpeed, bulletLifeTime, -transform.right);
         newBullet.transform.position = transform.position;

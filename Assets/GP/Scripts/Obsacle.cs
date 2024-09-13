@@ -49,7 +49,7 @@ public class Obsacle : MonoBehaviour
     private void Die()
     {
         Leaderboard.instance.AddPoints(points);
-
+        AudioManagerSingleton.Instance.BatimentDestroy.Play();
         Destroy(gameObject);
     }
 
