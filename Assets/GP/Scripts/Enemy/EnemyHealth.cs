@@ -31,12 +31,19 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public bool IsAlive()
+    {
+        return health > 0;
+    }
+
     public IEnumerator Die()
     {
+        health = 0;
         if (!GetComponent<Rigidbody2D>())
         {
             GameObject boom = Instantiate(explosion);
             boom.transform.position = transform.position;
+            GetComponent<SpriteRenderer>().color = Color.gray;
             Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.AddForce(Vector2.left * forceDying);

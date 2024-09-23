@@ -13,7 +13,7 @@ public class Lazer : MonoBehaviour
         AudioManager.Instance.sfxSource.PlayOneShot(LazerStart);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null && collision.GetComponent<PlayerLife>())
         {
@@ -21,7 +21,8 @@ public class Lazer : MonoBehaviour
 
             foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                StartCoroutine(collision.GetComponent<EnemyHealth>().Die());
+                if(enemy.GetComponent<EnemyHealth>().IsAlive())
+                    StartCoroutine(enemy.GetComponent<EnemyHealth>().Die());
             }
             foreach (GameObject obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
             {
